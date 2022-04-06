@@ -6,7 +6,8 @@ export class UserController {
   //   @Desc Get /user/dashboard
   @UseGuards(AuthenticatedGuard)
   @Get('dashboard')
-  login(@Request() req): any {
+  dashboard(@Request() req): any {
+    // req.user === return ...rest @auth.service.ts
     return req.user;
   }
 }
