@@ -18,10 +18,4 @@ export class AppController {
   login(@Request() req): any {
     return { msg: 'Logged in' };
   }
-
-  //   @Desc Post /register
-  @Post('register')
-  register(): any {
-    return {};
-  }
 }

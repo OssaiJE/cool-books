@@ -1,30 +1,32 @@
-import { Injectable } from '@nestjs/common';
-
-export type User = {
-  id: number;
-  name: string;
-  username: string;
-  password: string;
-};
+import { Injectable, NotFoundException } from '@nestjs/common';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
+import { User, UserDocument } from './schema/user.schema';
+import { createUserDto } from './dto/create-user.dto';
 
 @Injectable()
 export class UserService {
-  private readonly users: User[] = [
-    {
-      id: 1,
-      name: 'julius',
-      username: 'me@me.me',
-      password: '123456',
-    },
-    {
-      id: 2,
-      name: 'julius2',
-      username: 'me2@me.me',
-      password: '123456',
-    },
-  ];
+  constructor(@InjectModel('User') private userModel: Model<UserDocument>) {}
 
-  async findOne(username: string): Promise<User | undefined> {
-    return this.users.find((user) => user.username === username);
+  /**
+   * Create a user interface
+   * @param createUserDto
+   */
+  async create(createUserDto: createUserDto): Promise<User> {
+    const existingUser = await this.findUserByEmail(createUserDto.email);
+    if (existingUser) {
+      throw new NotFoundException(`User ${createUserDto.email} already exist!`);
+    }
+    const createUser = new this.userModel(createUserDto);
+    return createUser.save();
+  }
+  async findUserByEmail(email: string): Promise<any> {
+    console.log(email, 'user email:::::::');
+    const user = await this.userModel.findOne({ email: email });
+    console.log(user, 'find by user email:::::::');
+    if (!user) {
+      return null;
+    }
+    return user;
   }
 }
