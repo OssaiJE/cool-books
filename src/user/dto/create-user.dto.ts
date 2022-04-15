@@ -12,7 +12,7 @@ export class createUserDto {
   public readonly email: string;
   @IsString()
   @IsNotEmpty()
-  public readonly passWord: string;
+  public readonly password: string;
   @IsDateString()
   @IsNotEmpty()
   public readonly createdDate: Date;

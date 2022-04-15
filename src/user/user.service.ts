@@ -20,10 +20,11 @@ export class UserService {
     const createUser = new this.userModel(createUserDto);
     return createUser.save();
   }
+  //   find user by email
   async findUserByEmail(email: string): Promise<any> {
-    console.log(email, 'user email:::::::');
+    // console.log(email, 'user email:::::::');
     const user = await this.userModel.findOne({ email: email });
-    console.log(user, 'find by user email:::::::');
+    // console.log(user, 'find by user email:::::::');
     if (!user) {
       return null;
     }

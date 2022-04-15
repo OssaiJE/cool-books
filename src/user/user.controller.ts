@@ -27,18 +27,18 @@ export class UserController {
   //     return {};
   //   }
 
-  @Post()
+  @Post('/register')
   public async createUser(@Res() res, @Body() createUserDto: createUserDto) {
-    console.log(createUserDto, 'create user param::::::::::::::');
+    // console.log(createUserDto, 'create user param::::::::::::::');
     const user = await this.userService.create(createUserDto);
     return res.status(HttpStatus.OK).json(user);
   }
 
   //   @Desc Get /user/dashboard
-  @UseGuards(AuthenticatedGuard)
-  @Get('dashboard')
-  dashboard(@Request() req): any {
-    // req.user === return ...rest @auth.service.ts
-    return req.user;
-  }
+  //   @UseGuards(AuthenticatedGuard)
+  //   @Get('dashboard')
+  //   dashboard(@Request() req): any {
+  //     // req.user === return ...rest @auth.service.ts
+  //     return req.user;
+  //   }
 }

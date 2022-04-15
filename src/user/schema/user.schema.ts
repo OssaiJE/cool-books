@@ -4,19 +4,19 @@ import { Document } from 'mongoose';
 export type UserDocument = User & Document;
 @Schema()
 export class User extends Document {
-  @Prop()
+  @Prop({ required: true })
   firstname: string;
 
-  @Prop()
+  @Prop({ required: true })
   lastname: string;
 
-  @Prop()
+  @Prop({ required: true, unique: true })
   email: string;
 
-  @Prop()
-  passWord: string;
+  @Prop({ required: true })
+  password: string;
 
-  @Prop()
+  @Prop({ default: Date.now })
   createdDate: Date;
 }
 
