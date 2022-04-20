@@ -4,11 +4,9 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UserController } from './user/user.controller';
-import { NewbooksController } from './newbooks/newbooks.controller';
-import { MarketplaceController } from './marketplace/marketplace.controller';
-import { ProposalsController } from './proposals/proposals.controller';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
+import { BooksModule } from './books/books.module';
 
 @Module({
   imports: [
@@ -25,14 +23,9 @@ import { UserModule } from './user/user.module';
     }),
     AuthModule,
     UserModule,
+    BooksModule,
   ],
-  controllers: [
-    AppController,
-    UserController,
-    NewbooksController,
-    MarketplaceController,
-    ProposalsController,
-  ],
+  controllers: [AppController, UserController],
   providers: [AppService],
 })
 export class AppModule {}

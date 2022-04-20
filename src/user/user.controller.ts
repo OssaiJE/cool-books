@@ -38,7 +38,8 @@ export class UserController {
   @UseGuards(LocalAuthGuard)
   @Post('/login')
   login(@Request() req): any {
-    return req.user;
+    const { firstname, lastname, email, createdDate } = req.user;
+    return { firstname, lastname, email, createdDate };
   }
   //   @Desc Get /user/dashboard
   //   @UseGuards(AuthenticatedGuard)
