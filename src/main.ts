@@ -19,5 +19,6 @@ async function bootstrap() {
   app.use(passport.session());
 
   await app.listen(3000);
+  console.log(`Application is running on: ${await app.getUrl()}`);
 }
 bootstrap();

@@ -22,7 +22,6 @@ export class UserService {
     const { password } = createUser;
     const salt = await bcrypt.genSalt(10);
     createUser.password = await bcrypt.hash(password, salt);
-    // console.log(createUser);
     return createUser.save();
   }
   //   find user by email
