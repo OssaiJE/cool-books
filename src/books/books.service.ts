@@ -12,8 +12,9 @@ export class BooksService {
    * Create books interface
    * @param createSwapDto
    */
-  async swap(createSwapDto: createSwapDto): Promise<Books> {
-    const createSwap = new this.booksModel(createSwapDto);
+  async swap(createSwapDto: createSwapDto, file): Promise<Books> {
+    console.log(file);
+    const createSwap = new this.booksModel(file);
     //   const { userid } = createSwap;
     return createSwap.save();
   }

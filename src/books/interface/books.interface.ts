@@ -3,7 +3,7 @@ export interface BooksIntertface {
   title: string;
   author: string;
   shortdesc: string;
-  picture: string;
+  file: string;
   typetag: string;
   lookingfor: string;
   createdDate: Date;

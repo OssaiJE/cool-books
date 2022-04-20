@@ -4,25 +4,25 @@ import { Document } from 'mongoose';
 export type BooksDocument = Books & Document;
 @Schema()
 export class Books extends Document {
-  @Prop({ required: true })
+  @Prop({ required: false })
   userid: string;
 
-  @Prop({ required: true })
+  @Prop({ required: false })
   title: string;
 
-  @Prop({ required: true })
+  @Prop({ required: false })
   author: string;
 
-  @Prop({ required: true })
+  @Prop({ required: false })
   shortdesc: string;
 
-  @Prop({ required: true })
-  picture: string;
+  @Prop({ required: false })
+  file: string;
 
-  @Prop({ required: true })
+  @Prop({ required: false })
   typetag: string;
 
-  @Prop({ required: true })
+  @Prop({ required: false })
   lookingfor: string;
 
   @Prop({ default: Date.now })
