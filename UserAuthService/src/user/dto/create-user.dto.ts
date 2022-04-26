@@ -1,5 +1,5 @@
 import { IsNotEmpty, IsEmail, IsString, IsDateString } from 'class-validator';
-export class createUserDto {
+export class CreateUserDto {
   @IsString()
   @IsNotEmpty()
   public readonly firstame: string;
