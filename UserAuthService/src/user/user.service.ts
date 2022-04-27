@@ -13,7 +13,7 @@ export class UserService {
 
   // Create user to the database
   async creatUser(createUserDto: CreateUserDto): Promise<UserInterface> {
-    //   Check or existing user
+    //   Check for existing user
     const existingUser = await this.findUserByEmail(createUserDto.email);
     if (existingUser) {
       throw new NotFoundException(`User ${createUserDto.email} already exist!`);
