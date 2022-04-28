@@ -34,7 +34,6 @@ export class UserController {
   @UseGuards(AuthenticatedGuard)
   @Get()
   getUser(@Request() req): any {
-    console.log(req.user);
     return req.user;
   }
 }

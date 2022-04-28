@@ -6,9 +6,17 @@ import { AppService } from './app.service';
 import { UserModule } from './user/user.module';
 import { AuthService } from './auth/auth.service';
 import { AuthModule } from './auth/auth.module';
+import { ClientsModule, Transport } from '@nestjs/microservices';
+import { BooksController } from './books/books.controller';
 
 @Module({
   imports: [
+    ClientsModule.register([
+      {
+        name: 'BOOKSERVICE',
+        transport: Transport.TCP,
+      },
+    ]),
     ConfigModule.forRoot({
       isGlobal: true,
     }),
@@ -23,7 +31,7 @@ import { AuthModule } from './auth/auth.module';
     UserModule,
     AuthModule,
   ],
-  controllers: [AppController],
+  controllers: [AppController, BooksController],
   providers: [AppService, AuthService],
 })
 export class AppModule {}

@@ -18,7 +18,7 @@ async function bootstrap() {
   app.use(passport.initialize());
   app.use(passport.session());
 
-  await app.listen(3004); // TODO: add port in env vars
+  await app.listen(3000); // TODO: add port in env vars
   console.log(`Application is running on: ${await app.getUrl()}`);
 }
 bootstrap();

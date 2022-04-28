@@ -8,7 +8,8 @@ async function bootstrap() {
     {
       transport: Transport.TCP,
     },
+    // Include options and port when you have multiple services
   );
-  app.listen();
+  await app.listen();
 }
 bootstrap();
