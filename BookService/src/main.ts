@@ -7,6 +7,9 @@ async function bootstrap() {
     AppModule,
     {
       transport: Transport.TCP,
+      options: {
+        port: 4444,
+      },
     },
     // Include options and port when you have multiple services
   );

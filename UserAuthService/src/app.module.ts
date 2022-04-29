@@ -16,6 +16,7 @@ import { BookService } from './book/book.service';
       {
         name: 'BOOKSERVICE',
         transport: Transport.TCP,
+        options: { port: 4444 },
       },
     ]),
     ConfigModule.forRoot({
