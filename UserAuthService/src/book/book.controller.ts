@@ -9,6 +9,6 @@ export class BookController {
   //   @Desc Post /book/swap
   @Post('/swap')
   createSwap(@Body() createSwap: CreateSwapDto) {
-
-  };
+    this.bookService.createSwap(createSwap);
+  }
 }
