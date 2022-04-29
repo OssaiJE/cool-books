@@ -1,11 +1,11 @@
-## Nestjs project
+### Nestjs project
 
 This README will be updated in due time
 
-### Login Route
+#### Sign up Route
+http://localhost:3000/user/signup
 
-http://localhost:3004/user/signin
+#### Sign in Route
+http://localhost:3000/user/signin
 
-### Register Route
 
-http://localhost:3004/user/signup

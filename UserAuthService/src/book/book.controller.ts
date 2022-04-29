@@ -7,8 +7,8 @@ export class BookController {
   constructor(private readonly bookService: BookService) {}
 
   //   @Desc Post /book/swap
-  @Post('/market')
+  @Post('/swap')
   createSwap(@Body() createSwap: CreateSwapDto) {
-      
+
   };
 }
