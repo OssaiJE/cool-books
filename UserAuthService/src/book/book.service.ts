@@ -10,10 +10,18 @@ export class BookService {
   ) {}
 
   async createSwap(createSwap: CreateSwapDto) {
-    const { userid, title, author } = createSwap;
+    const { userid, title, author, shortdesc, typetag, lookingfor } =
+      createSwap;
     this.bookClient.emit(
       'swap_created',
-      new CreateSwapEvent(userid, title, author),
+      new CreateSwapEvent(
+        userid,
+        title,
+        author,
+        shortdesc,
+        typetag,
+        lookingfor,
+      ),
     );
   }
 }
