@@ -24,15 +24,19 @@ const fileFilter = (req, file, cb) => {
     cb(null, false);
   }
 };
-const upload = {
+// const upload = {
+//   storage: storage,
+//   limits: {
+//     fileSize: 1024 * 1024 * 2,
+//   },
+//   fileFilter: fileFilter,
+// };
+export const upload = {
   storage: storage,
   limits: {
     fileSize: 1024 * 1024 * 2,
   },
   fileFilter: fileFilter,
 };
-// export const storage = diskStorage({
-//     destination: './uploads',
-// });
 
-export default upload;
+// export default upload;

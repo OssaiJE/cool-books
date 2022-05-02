@@ -10,7 +10,7 @@ export class BookController {
 
   //   @Desc Post /book/swap
   @Post('/swap')
-  @UseInterceptors(FileInterceptor('image', { upload }))
+  @UseInterceptors(FileInterceptor('image', upload))
   createSwap(@Body() createSwap: CreateSwapDto) {
     this.bookService.createSwap(createSwap);
   }
