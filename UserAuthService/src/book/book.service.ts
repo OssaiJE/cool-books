@@ -10,8 +10,10 @@ export class BookService {
   ) {}
 
   async createSwap(createSwap: CreateSwapDto) {
-    const { userid, title, author, shortdesc, typetag, lookingfor } =
+    const { userid, title, author, shortdesc, file, typetag, lookingfor } =
       createSwap;
+    // TODO: add image path url
+    let imagepath;
     this.bookClient.emit(
       'swap_created',
       new CreateSwapEvent(
@@ -19,6 +21,7 @@ export class BookService {
         title,
         author,
         shortdesc,
+        imagepath,
         typetag,
         lookingfor,
       ),

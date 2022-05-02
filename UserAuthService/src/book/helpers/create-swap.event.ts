@@ -4,6 +4,7 @@ export class CreateSwapEvent {
     public readonly title: string,
     public readonly author: string,
     public readonly shortdesc: string,
+    public readonly imagepath: string,
     public readonly typetag: string,
     public readonly lookingfor: string,
   ) {}

@@ -12,8 +12,8 @@ export class CreateSwapDto {
   @IsString()
   @IsNotEmpty()
   public readonly shortdesc: string;
-  //   @IsNotEmpty()
-  //   public readonly file: string;
+  @IsNotEmpty()
+  public readonly file: string;
   @IsString()
   @IsNotEmpty()
   public readonly typetag: string;
