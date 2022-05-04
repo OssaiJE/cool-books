@@ -7,15 +7,11 @@ const storage = diskStorage({
   destination: function (req, file, cb) {
     cb(null, 'src/uploads');
   },
-  //   filename: function (req, file, cb) {
-  //     const filename = Date.now() + file.originalname;
-  //     cb(null, filename);
-  //   },
+  filename: function (req, file, cb) {
+    const filename = Date.now() + file.originalname;
+    cb(null, filename);
+  },
 });
-let filename = function (req, file, cb) {
-  filename = Date.now() + file.originalname;
-  cb(null, filename);
-};
 //   filter file uploads
 const fileFilter = (req, file, cb) => {
   if (
@@ -30,7 +26,6 @@ const fileFilter = (req, file, cb) => {
 };
 const upload = {
   storage: storage,
-  filename: filename,
   limits: {
     fileSize: 1024 * 1024 * 2,
   },

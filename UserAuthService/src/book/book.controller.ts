@@ -12,7 +12,7 @@ export class BookController {
   @Post('/swap')
   @UseInterceptors(FileInterceptor('image', upload))
   createSwap(@Body() createSwap: CreateSwapDto) {
-    console.log(upload.filename);
+    console.log(upload);
     this.bookService.createSwap(createSwap);
   }
 }
