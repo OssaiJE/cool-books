@@ -2,7 +2,7 @@ import { Body, Controller, Post, UseInterceptors } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { BookService } from './book.service';
 import { CreateSwapDto } from './dto/create-swap.dto';
-import { upload } from './helpers/upload-storage';
+import upload from './helpers/upload-storage';
 
 @Controller('book')
 export class BookController {
@@ -12,6 +12,7 @@ export class BookController {
   @Post('/swap')
   @UseInterceptors(FileInterceptor('image', upload))
   createSwap(@Body() createSwap: CreateSwapDto) {
+    console.log(upload.filename);
     this.bookService.createSwap(createSwap);
   }
 }

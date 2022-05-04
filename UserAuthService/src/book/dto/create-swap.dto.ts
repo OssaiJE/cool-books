@@ -13,7 +13,7 @@ export class CreateSwapDto {
   @IsNotEmpty()
   public readonly shortdesc: string;
   @IsNotEmpty()
-  public readonly file: string;
+  public readonly image: string;
   @IsString()
   @IsNotEmpty()
   public readonly typetag: string;

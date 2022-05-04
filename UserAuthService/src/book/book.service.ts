@@ -1,6 +1,6 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
-import { diskStorage } from 'multer';
+// import { diskStorage } from 'multer';
 import { CreateSwapDto } from './dto/create-swap.dto';
 import { CreateSwapEvent } from './helpers/create-swap.event';
 
@@ -12,7 +12,7 @@ export class BookService {
 
   //   Create swap method
   async createSwap(createSwap: CreateSwapDto) {
-    const { userid, title, author, shortdesc, file, typetag, lookingfor } =
+    const { userid, title, author, shortdesc, typetag, lookingfor } =
       createSwap;
     // TODO: add image path url
     let imagepath;
