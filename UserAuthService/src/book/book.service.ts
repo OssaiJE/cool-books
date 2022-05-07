@@ -11,11 +11,11 @@ export class BookService {
   ) {}
 
   //   Create swap method
-  async createSwap(createSwap: CreateSwapDto) {
+  async createSwap(createSwap: CreateSwapDto, image) {
     const { userid, title, author, shortdesc, typetag, lookingfor } =
       createSwap;
-    // TODO: add image path url
-    let imagepath;
+    const imagepath = image.path;
+
     this.bookClient.emit(
       'swap_created',
       new CreateSwapEvent(
