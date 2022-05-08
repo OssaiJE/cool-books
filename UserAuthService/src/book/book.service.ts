@@ -15,7 +15,6 @@ export class BookService {
     const { userid, title, author, shortdesc, typetag, lookingfor } =
       createSwap;
     const imagepath = image.path;
-
     this.bookClient.emit(
       'swap_created',
       new CreateSwapEvent(
