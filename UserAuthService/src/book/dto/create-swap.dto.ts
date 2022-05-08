@@ -1,8 +1,8 @@
 import { IsNotEmpty, IsString, IsDateString } from 'class-validator';
 export class CreateSwapDto {
-  @IsString()
-  @IsNotEmpty()
-  public readonly userid: string;
+  //   @IsString()
+  //   @IsNotEmpty()
+  //   public readonly userid: string;
   @IsString()
   @IsNotEmpty()
   public readonly title: string;
