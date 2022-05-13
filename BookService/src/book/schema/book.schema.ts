@@ -1,9 +1,9 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 
-export type BooksDocument = Books & Document;
+export type BookDocument = Book & Document;
 @Schema()
-export class Books extends Document {
+export class Book extends Document {
   @Prop()
   userid: string;
 
@@ -29,4 +29,4 @@ export class Books extends Document {
   createdDate: Date;
 }
 
-export const BooksSchema = SchemaFactory.createForClass(Books);
+export const BookSchema = SchemaFactory.createForClass(Book);

@@ -10,8 +10,10 @@ export class BookService {
     @InjectModel('Book') private readonly bookModel: Model<BookInterface>,
   ) {}
 
-  //    @Desc create swap method
-  async createSwap(data: CreateSwapEvent) {
-    console.log('CreateSwap - BookService', data);
+  //    @Desc create swap && save to database
+  async createSwap(data: CreateSwapEvent): Promise<BookInterface> {
+    const newSwap = new this.bookModel(data);
+    return await newSwap.save();
+    // console.log('CreateSwap - BookService', data);
   }
 }
