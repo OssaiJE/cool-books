@@ -17,7 +17,6 @@ export class BookService {
     userid: string,
   ) {
     const { title, author, shortdesc, typetag, lookingfor } = createSwap;
-    // console.log(typeof userid);
     this.bookClient.emit(
       'swap_created',
       new CreateSwapEvent(
