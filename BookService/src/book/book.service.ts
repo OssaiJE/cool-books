@@ -14,6 +14,5 @@ export class BookService {
   async createSwap(data: CreateSwapEvent): Promise<BookInterface> {
     const newSwap = new this.bookModel(data);
     return await newSwap.save();
-    // console.log('CreateSwap - BookService', data);
   }
 }

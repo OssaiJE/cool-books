@@ -7,6 +7,7 @@ import { CreateSwapEvent } from './helpers/create-swap.event';
 export class BookController {
   constructor(private readonly bookService: BookService) {}
 
+  //   Get data from emitted event
   @EventPattern('swap_created')
   swapBook(data: CreateSwapEvent) {
     this.bookService.createSwap(data);
